@@ -60,6 +60,7 @@ public class EditDialogController {
     private boolean checkLength(){
         if(tfTask.getText().length() >= 100){
             System.out.println("Слишком много символов. Укоротите запись");
+            //DialogManager.showInfoDialog("Ошибка","Укоротите запись");
             return false;
         }
         return true;
