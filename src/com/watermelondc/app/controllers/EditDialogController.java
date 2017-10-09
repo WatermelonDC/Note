@@ -39,6 +39,7 @@ public class EditDialogController {
 
     public void actionSave(ActionEvent actionEvent){
         if(!checkValues()){return;}
+        if(!checkLength()){return;}
 
         note.setName(tfName.getText());
         note.setTask(tfTask.getText());
@@ -54,6 +55,14 @@ public class EditDialogController {
         }
         return true;
 
+    }
+
+    private boolean checkLength(){
+        if(tfTask.getText().length() >= 100){
+            System.out.println("Слишком много символов. Укоротите запись");
+            return false;
+        }
+        return true;
     }
 
 
